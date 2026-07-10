@@ -1,12 +1,30 @@
 # AI-Generated Text Detection Using Transformers
 
-This repository contains a minimal transformer-based text classification example for AI-generated text detection.
+A comprehensive project for detecting AI-generated text using transformer-based models. This repository includes data loading pipelines, feature engineering, and model training infrastructure for binary text classification.
 
-The current implementation in `sample.py`:
-- loads a pretrained Hugging Face transformer encoder
-- defines a PyTorch dataset for tokenized text inputs
-- adds a classification head for binary prediction
-- runs inference on sample sentences and prints class probabilities
+## Features
+
+- **Data Loading**: Efficient dataset management and preprocessing
+- **Feature Engineering**: Advanced text feature extraction and vectorization
+- **Transformer Models**: Pretrained transformer encoders for text classification
+- **Modular Architecture**: Clean separation of concerns with organized module structure
+
+## Project Structure
+
+```
+├── data_loader/
+│   ├── dataset.py      - PyTorch dataset implementation
+│   ├── loader.py       - Data loading utilities
+│   └── utils.py        - Data processing helpers
+├── feature_engineering/
+│   ├── config.py       - Configuration management
+│   ├── feature_engineering.py  - Feature extraction pipeline
+│   ├── preprocessing.py        - Text preprocessing
+│   ├── vectorizer.py           - Text vectorization
+│   ├── utils.py                - Utility functions
+│   └── feature_report.md       - Feature analysis documentation
+└── README.md           - Project overview
+```
 
 ## Requirements
 
@@ -14,30 +32,55 @@ The current implementation in `sample.py`:
 - PyTorch
 - Transformers
 - NumPy
+- Pandas (optional, for data analysis)
 
-## Install
+## Installation
 
-```bash
-pip install torch transformers numpy
-```
-
-If you are using a GPU-enabled PyTorch build, install the version recommended by the official PyTorch instructions for your platform.
-
-## Run
+Clone the repository and install dependencies:
 
 ```bash
-python sample.py
+git clone https://github.com/Dharsan5/AI-Generated-Text-Detection-Using-Transformers.git
+cd AI-Generated-Text-Detection-Using-Transformers
+pip install -r requirements.txt
 ```
 
-## What It Does
+## Usage
 
-`sample.py` creates a `TransformerClassifier` using `distilbert-base-uncased` by default, tokenizes input text, and produces probability scores for two classes.
+### Data Loading
 
-## Project Structure
+```python
+from data_loader.loader import load_data
+from data_loader.dataset import TextDataset
 
-- `sample.py` - minimal example model and inference script
-- `README.md` - project overview and usage
+# Load and prepare data
+data = load_data('path/to/data.csv')
+dataset = TextDataset(data)
+```
+
+### Feature Engineering
+
+```python
+from feature_engineering.feature_engineering import FeatureEngineer
+
+# Extract features
+engineer = FeatureEngineer()
+features = engineer.transform(texts)
+```
+
+## Getting Started
+
+1. Prepare your dataset with text samples and labels
+2. Configure settings in `feature_engineering/config.py`
+3. Run the data loading and feature engineering pipeline
+4. Train and evaluate transformer models
+
+## Project Goals
+
+- Detect AI-generated text with high accuracy
+- Provide interpretable feature analysis
+- Enable easy model training and evaluation
+- Support multiple transformer architectures
 
 ## Notes
 
-This is a starter example, not a trained detector. To make it useful for AI-generated text detection, you would need to train the classifier on a labeled dataset and evaluate it on held-out data.
+Refer to `feature_engineering/feature_report.md` for detailed feature analysis and engineering decisions.
