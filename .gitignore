@@ -55,6 +55,9 @@ Thumbs.db
 # Logs
 *.log
 
+# Temporary training checkpoints
+tmp_profile/
+
 # PDF reports (can be regenerated)
 *.pdf
 
