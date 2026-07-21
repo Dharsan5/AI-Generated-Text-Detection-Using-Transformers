@@ -1,0 +1,64 @@
+# Large dataset files and folders
+Datasets/AI_Human.csv
+Datasets/advanced_hc3_3class_small.csv
+Datasets/fast_text_rebirth_dataset_315k.csv
+Datasets/train_v2_drcat_02.csv
+Datasets/cleaned/
+Datasets/essay/
+Datasets/other/
+Datasets/perturb/
+Datasets/perturb_old/
+Datasets/raw/
+Datasets/reuter/
+Datasets/wp/
+# Datasets/merged/ - Using Git LFS for large files
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# PDF reports (can be regenerated)
+*.pdf
+
+# Keep only the final merged dataset
+# !datasets/merged/
+
+Datasets/
